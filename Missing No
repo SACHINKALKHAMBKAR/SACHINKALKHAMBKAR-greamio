@@ -4,7 +4,7 @@
 int main()    
 {    
 int size=7;
-int arr[size]; // array of size=5;
+int arr[size]; 
     int temp = 0; 
     
 for(int i=0;i<size;i++){

@@ -11,7 +11,7 @@ for(int i=0;i<size;i++){
    scanf("%d",&arr[i]);
 } 
                 
-    //Sort the array in ascending order    
+    //Find duplicate numbers    
     for (int i = 0; i < size; i++) {     
         for (int j = i+1; j < size; j++) {     
            if(arr[i] == arr[j]) {    

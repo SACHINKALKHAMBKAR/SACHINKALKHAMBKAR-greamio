@@ -37,27 +37,6 @@ public partial class web : System.Web.UI.Page
        // int id = int.Parse((sender as LinkButton).CommandArgument);
         //byte[] bytes;
         string fileName, contentType;
-        //string constr = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\lenovo\Documents\Database1.accdb";
-            //ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
-       /* using (SqlConnection con = new SqlConnection(constr))
-        {
-            using (SqlCommand cmd = new SqlCommand())
-            {
-                cmd.CommandText = "select * from Cust where Id=@ID";
-                cmd.Parameters.AddWithValue("@ID", txtMobile_no.Text);
-                cmd.Connection = con;
-                con.Open();
-                using (SqlDataReader sdr = cmd.ExecuteReader())
-                {
-                    sdr.Read();
-                    bytes = (byte[])sdr["Data"];
-                    contentType = sdr["ContentType"].ToString();
-                    fileName = sdr["Name"].ToString();
-                }
-                con.Close();
-            }
-        }*/
-
         my_con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\lenovo\Documents\Database1.accdb");
         my_con.Open();
         o_cmd = new OleDbCommand("select * from Cust where ID=@ID", my_con);
@@ -65,10 +44,6 @@ public partial class web : System.Web.UI.Page
         OleDbDataAdapter da = new OleDbDataAdapter(o_cmd);
         DataTable dt = new DataTable();
         da.Fill(dt);
-       // bytes = (Byte[])dt.Rows[0]["Data"];
-        //bytes = dt
-       // bytes str = dt.Rows[0].ItemArray[0].ToString + dt.Rows[0].ItemArray[1].ToString;
-       // bytes = (Byte[])(str);
 
        StringBuilder builder = new StringBuilder();
 
